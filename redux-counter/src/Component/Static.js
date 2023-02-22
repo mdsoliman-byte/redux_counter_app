@@ -1,0 +1,9 @@
+import React from 'react'
+
+export default function Static({ count }) {
+    return (
+        <div className='p-4 h-40 flex flex-col items-crener justify-crener space-y-5 bg-white rounded shadow '>
+            <div className="text-2xl font-semibold"> Total Count : {count}</div>
+        </div>
+    )
+}

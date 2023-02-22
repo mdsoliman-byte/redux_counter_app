@@ -1,6 +1,7 @@
 
 import './App.css';
 import Counter from './Component/Counter';
+import Static from './Component/Static';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div class="max-w-md mx-auto mt-10 space-y-5">
           <Counter />
           <Counter />
+          <Static count={3} />
         </div>
       </div>
     </>
