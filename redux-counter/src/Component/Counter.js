@@ -1,32 +1,18 @@
-import React, { useState } from 'react'
-
-export default function Counter() {
-    const [count, setCount] = useState(0);
-    const increment = () => {
-        setCount((previousCount) => previousCount + 1)
-    }
-    const decrement = () => {
-
-        setCount((previousCount) => previousCount - 1)
+import Buttons from "./Buttons";
+import Count from "./Count";
 
 
-    }
+export default function Counter({ id, increment, decrement, count }) {
+
     return (
         <div
             class="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow"
         >
-            <div class="text-2xl font-semibold" id="display" >{count}</div>
+            <Count count={count} />
             <div class="flex space-x-3">
-                <button id="increment" onClick={increment}
-                    class="bg-indigo-400 text-white px-3 py-2 rounded shadow"
-                >
-                    Increment
-                </button>
-                <button id="deincrement" onClick={decrement}
-                    class="bg-red-400 text-white px-3 py-2 rounded shadow"
-                >
-                    Decrement
-                </button>
+                <Buttons handlar={() => increment(id)}>INCREMENT</Buttons>
+                <Buttons handlar={() => decrement(id)}>DECREMENT</Buttons>
+
             </div>
         </div>
     )
